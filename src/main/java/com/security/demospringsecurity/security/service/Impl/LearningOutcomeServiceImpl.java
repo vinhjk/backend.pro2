@@ -4,10 +4,12 @@ import com.security.demospringsecurity.model.LearningOutcome;
 import com.security.demospringsecurity.repository.LearningOutcomeRepository;
 import com.security.demospringsecurity.security.service.LearningOutcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LearningOutcomeServiceImpl implements LearningOutcomeService {
     @Autowired
     private LearningOutcomeRepository outcomeRepository;

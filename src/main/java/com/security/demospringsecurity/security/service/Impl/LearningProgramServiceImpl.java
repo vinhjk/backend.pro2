@@ -4,10 +4,12 @@ import com.security.demospringsecurity.model.LearningProgram;
 import com.security.demospringsecurity.repository.LearningProgramRepository;
 import com.security.demospringsecurity.security.service.LearningProgramService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LearningProgramServiceImpl implements LearningProgramService {
     @Autowired
     LearningProgramRepository programRepository;

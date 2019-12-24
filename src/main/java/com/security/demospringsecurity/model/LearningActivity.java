@@ -1,6 +1,8 @@
 package com.security.demospringsecurity.model;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class LearningActivity {
     @Id
@@ -10,7 +12,7 @@ public class LearningActivity {
 
     @ManyToMany
     @JoinColumn(name = "learningOutcome")
-    private LearningOutcome learningOutcome;
+    private List<LearningOutcome> learningOutcome;
 
     public LearningActivity(){}
 
@@ -18,6 +20,14 @@ public class LearningActivity {
 
     public Long getId() {
         return id;
+    }
+
+    public List<LearningOutcome> getLearningOutcome() {
+        return learningOutcome;
+    }
+
+    public void setLearningOutcome(List<LearningOutcome> learningOutcome) {
+        this.learningOutcome = learningOutcome;
     }
 
     public void setId(Long id) {
@@ -30,13 +40,5 @@ public class LearningActivity {
 
     public void setLearningActivity(String learningActivity) {
         this.learningActivity = learningActivity;
-    }
-
-    public LearningOutcome getLearningOutcome() {
-        return learningOutcome;
-    }
-
-    public void setLearningOutcome(LearningOutcome learningOutcome) {
-        this.learningOutcome = learningOutcome;
     }
 }

@@ -4,10 +4,12 @@ import com.security.demospringsecurity.model.LearningActivity;
 import com.security.demospringsecurity.repository.LearningActivityRepository;
 import com.security.demospringsecurity.security.service.LearningActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LearningActivityServiceImpl implements LearningActivityService {
 
     @Autowired

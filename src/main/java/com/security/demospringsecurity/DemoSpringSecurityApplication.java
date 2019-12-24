@@ -10,29 +10,37 @@ import com.security.demospringsecurity.security.service.LearningProgramService;
 import com.security.demospringsecurity.security.service.ObjectiveService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class DemoSpringSecurityApplication {
+public class DemoSpringSecurityApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringSecurityApplication.class, args);
 	}
 
-	@Bean
-	public LearningProgramService learningProgramService(){return new LearningProgramServiceImpl();
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(DemoSpringSecurityApplication.class);
 	}
 
-	@Bean
-	public LearningActivityService learningActivityService(){return new LearningActivityServiceImpl();
-	}
-
-	@Bean
-	public LearningOutcomeService learningOutcomeService(){return new LearningOutcomeServiceImpl();
-	}
-
-	@Bean
-	public ObjectiveService objectiveService(){return new ObjectiveServiceImpl();
-	}
+//
+//	@Bean
+//	public LearningProgramService learningProgramService(){return new LearningProgramServiceImpl();
+//	}
+//
+//	@Bean
+//	public LearningActivityService learningActivityService(){return new LearningActivityServiceImpl();
+//	}
+//
+//	@Bean
+//	public LearningOutcomeService learningOutcomeService(){return new LearningOutcomeServiceImpl();
+//	}
+//
+//	@Bean
+//	public ObjectiveService objectiveService(){return new ObjectiveServiceImpl();
+//	}
 
 }
