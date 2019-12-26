@@ -28,7 +28,7 @@ public class LearningProgramController {
         return new ResponseEntity<List<LearningProgram>>(learningPrograms, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping()
     private ResponseEntity<Void> createLearningProgram(@RequestBody LearningProgram learningProgram, UriComponentsBuilder ucBuilder) {
         learningProgramService.save(learningProgram);
         HttpHeaders headers = new HttpHeaders();
